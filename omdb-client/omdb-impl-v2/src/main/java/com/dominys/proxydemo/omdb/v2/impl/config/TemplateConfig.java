@@ -12,11 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Configuration
+@Configuration("templateConfigV2")
 public class TemplateConfig {
 
     @Bean
-    public RestTemplate omdbClientRestTemplate() {
+    public RestTemplate omdbClientRestTemplateV2() {
         RestTemplate restTemplate = new RestTemplate();
         List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
 

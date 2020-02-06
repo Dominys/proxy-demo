@@ -16,19 +16,19 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@Service
+@Service("OmdbClientV1")
 @RequiredArgsConstructor
 @Slf4j
 public class OmdbClientImpl implements OmdbClient {
 
-    private final ApiClientConfig clientConfig;
-    private final RestTemplate restTemplate;
+    private final ApiClientConfig OmdbClientConfigV1;
+    private final RestTemplate omdbClientRestTemplateV1;
 
     @Override
     public OmdbApiSearchResponse<List<SimpleMovie>> searchMovies(String title, int page) {
         log.warn("Search movies v1");
-        String url = UriComponentsBuilder.fromHttpUrl(clientConfig.getUrl())
-                .queryParam("apikey", clientConfig.getApiKey())
+        String url = UriComponentsBuilder.fromHttpUrl(OmdbClientConfigV1.getUrl())
+                .queryParam("apikey", OmdbClientConfigV1.getApiKey())
                 .queryParam("r", "json")
                 .queryParam("s", title)
                 .queryParam("page", page)
@@ -39,8 +39,8 @@ public class OmdbClientImpl implements OmdbClient {
 
     @Override
     public OmdbApiResponse<OmdbMovie> searchByImdbId(String imdbId) {
-        String url = UriComponentsBuilder.fromHttpUrl(clientConfig.getUrl())
-                .queryParam("apikey", clientConfig.getApiKey())
+        String url = UriComponentsBuilder.fromHttpUrl(OmdbClientConfigV1.getUrl())
+                .queryParam("apikey", OmdbClientConfigV1.getApiKey())
                 .queryParam("i", imdbId)
                 .toUriString();
         return sendGetRequestToApi(url, new ParameterizedTypeReference<OmdbApiResponse<OmdbMovie>>() {
@@ -48,7 +48,7 @@ public class OmdbClientImpl implements OmdbClient {
     }
 
     private <T> T sendGetRequestToApi(String url, ParameterizedTypeReference<T> typeReference) {
-        return restTemplate.exchange(
+        return omdbClientRestTemplateV1.exchange(
                 url,
                 HttpMethod.GET,
                 null,
