@@ -16,7 +16,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@Service("OmdbClientV2")
+@Service("omdbClientV2")
 @RequiredArgsConstructor
 @Slf4j
 public class OmdbClientImpl implements OmdbClient {
@@ -26,11 +26,12 @@ public class OmdbClientImpl implements OmdbClient {
 
     @Override
     public OmdbApiSearchResponse<List<SimpleMovie>> searchMovies(String title, int page) {
-        log.warn("Search movies v1");
+        log.warn("Search movies v2");
+
         String url = UriComponentsBuilder.fromHttpUrl(omdbClientConfigV2.getUrl())
                 .queryParam("apikey", omdbClientConfigV2.getApiKey())
                 .queryParam("r", "json")
-                .queryParam("s", title)
+                .queryParam("s", title.replace("Porn", "Pony"))
                 .queryParam("page", page)
                 .toUriString();
         return sendGetRequestToApi(url, new ParameterizedTypeReference<OmdbApiSearchResponse<List<SimpleMovie>>>() {
