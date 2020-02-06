@@ -5,6 +5,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>application</module>
+        <module>omdb-client</module>
+        <module>businesslogic</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

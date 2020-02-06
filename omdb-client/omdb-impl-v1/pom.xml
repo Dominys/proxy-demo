@@ -3,27 +3,20 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>proxy-demo</artifactId>
+        <artifactId>omdb-client</artifactId>
         <groupId>com.dominys</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>application</artifactId>
+    <artifactId>omdb-impl-v1</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>com.dominys</groupId>
-            <artifactId>businesslogic</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.dominys</groupId>
-            <artifactId>omdb-impl-v1</artifactId>
+            <artifactId>omdb-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
 
 </project>
