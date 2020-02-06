@@ -1,11 +1,11 @@
-package com.dominys.proxydemo.omdb.v1.impl.client;
+package com.dominys.proxydemo.omdb.v2.impl.client;
 
 import com.dominys.proxydemo.omdb.api.OmdbClient;
 import com.dominys.proxydemo.omdb.api.dto.OmdbApiResponse;
 import com.dominys.proxydemo.omdb.api.dto.OmdbApiSearchResponse;
 import com.dominys.proxydemo.omdb.api.dto.OmdbMovie;
 import com.dominys.proxydemo.omdb.api.dto.SimpleMovie;
-import com.dominys.proxydemo.omdb.v1.impl.config.ApiClientConfig;
+import com.dominys.proxydemo.omdb.v2.impl.config.ApiClientConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.ParameterizedTypeReference;
