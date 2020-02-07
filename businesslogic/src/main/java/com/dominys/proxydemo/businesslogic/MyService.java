@@ -1,5 +1,6 @@
 package com.dominys.proxydemo.businesslogic;
 
+import com.dominys.proxydemo.omdb.api.OmdbClient;
 import com.dominys.proxydemo.omdb.api.dto.OmdbApiSearchResponse;
 import com.dominys.proxydemo.omdb.api.dto.SimpleMovie;
 import com.dominys.proxydemo.omdb.api.dto.User;
@@ -12,10 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MyService {
 
-    private final OmdbClientFactory clientFactory;
+    private final OmdbClient omdbClientRouter;
 
     public OmdbApiSearchResponse<List<SimpleMovie>> searchMovie(User user, String title, int page) {
-        return clientFactory.getClient(user).searchMovies(title, page);
+        return omdbClientRouter.searchMovies(user, title, page);
     }
 
 }

@@ -1,10 +1,7 @@
 package com.dominys.proxydemo.omdb.v1.impl.client;
 
 import com.dominys.proxydemo.omdb.api.OmdbClient;
-import com.dominys.proxydemo.omdb.api.dto.OmdbApiResponse;
-import com.dominys.proxydemo.omdb.api.dto.OmdbApiSearchResponse;
-import com.dominys.proxydemo.omdb.api.dto.OmdbMovie;
-import com.dominys.proxydemo.omdb.api.dto.SimpleMovie;
+import com.dominys.proxydemo.omdb.api.dto.*;
 import com.dominys.proxydemo.omdb.v1.impl.config.ApiClientConfig;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +22,7 @@ public class OmdbClientImpl implements OmdbClient {
     private final RestTemplate omdbClientRestTemplateV1;
 
     @Override
-    public OmdbApiSearchResponse<List<SimpleMovie>> searchMovies(String title, int page) {
+    public OmdbApiSearchResponse<List<SimpleMovie>> searchMovies(User user, String title, int page) {
         log.warn("Search movies v1");
         String url = UriComponentsBuilder.fromHttpUrl(OmdbClientConfigV1.getUrl())
                 .queryParam("apikey", OmdbClientConfigV1.getApiKey())
