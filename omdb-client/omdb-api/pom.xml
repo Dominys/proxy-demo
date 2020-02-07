@@ -10,5 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>omdb-api</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.dominys</groupId>
+            <artifactId>router</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

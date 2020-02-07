@@ -14,7 +14,17 @@
     <dependencies>
         <dependency>
             <groupId>com.dominys</groupId>
-            <artifactId>omdb-api</artifactId>
+            <artifactId>omdb-impl-v1</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dominys</groupId>
+            <artifactId>omdb-impl-v2</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dominys</groupId>
+            <artifactId>router</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

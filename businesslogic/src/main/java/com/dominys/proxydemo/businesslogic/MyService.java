@@ -13,10 +13,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class MyService {
 
-    private final OmdbClient omdbClientRouter;
+    private final OmdbClient OmdbClient;
 
     public OmdbApiSearchResponse<List<SimpleMovie>> searchMovie(User user, String title, int page) {
-        return omdbClientRouter.searchMovies(user, title, page);
+        return OmdbClient.searchMovies(user, title, page);
     }
 
 }

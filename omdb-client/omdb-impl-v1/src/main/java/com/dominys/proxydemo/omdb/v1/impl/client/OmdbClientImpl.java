@@ -13,7 +13,6 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
-@Service("omdbClientV1")
 @RequiredArgsConstructor
 @Slf4j
 public class OmdbClientImpl implements OmdbClient {
